@@ -1,0 +1,47 @@
+*
+{
+	outline: 1px solid red;
+}
+
+body
+{
+	margin: 0 auto;
+}
+
+@media (min-width: 720px)
+{
+	body
+	{
+		max-width: 720px;
+	}
+}
+
+.norender
+{
+	display: none;
+}
+
+h1
+{
+	margin: 0 0 1rem;
+}
+
+header
+{
+	text-align: center;
+	position: relative;
+}
+
+.details div
+{
+	display: inline-block;
+}
+
+#object-designation
+{
+	position: absolute;
+	top: .5rem;
+	left: .5rem;
+	cursor: pointer;
+	color: rgb(128, 128, 128);
+}
