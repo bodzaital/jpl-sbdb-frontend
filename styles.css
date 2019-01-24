@@ -23,7 +23,7 @@ header
 {
 	text-align: center;
 	position: relative;
-	margin-bottom: 1rem;
+	margin: 1rem 0;
 }
 
 .name-container
@@ -37,8 +37,12 @@ h1#object-name
 	display: inline-block;
 }
 
-.details div
+.details
 {
+	padding: .5rem 0;
+	width: 75%;
+	border-top: 1px solid gray;
+	border-bottom: 1px solid gray;
 	display: inline-block;
 }
 
@@ -66,6 +70,24 @@ h1#object-name
 	border-right: 1px solid gray;
 	outline: none;
 	padding: .125rem .25rem;
+	font-style: italic;
+}
+
+@media (max-width: 720px)
+{
+	.search-field
+	{
+		position: relative;
+		top: unset;
+		right: unset;
+		margin-bottom: 1rem;
+	}
+
+	.search-field input
+	{
+		border-right: none;
+		text-align: center;
+	}
 }
 
 /* Hide on mobile so it won't overlap with the title-container. */
@@ -109,6 +131,7 @@ h1#object-name
 .flex-col
 {
 	flex-grow: 1;
+	padding-bottom: 1rem;
 }
 
 @media (min-width: 720px)
@@ -157,6 +180,7 @@ h1#object-name
 
 #object-des-alt-showmore
 {
+	padding-left: .5rem;
 	float: right;
 }
 
@@ -178,4 +202,16 @@ a.link-button:hover,
 a.link-button.isopen
 {
 	box-shadow: 0 0 .25rem rgba(0, 0, 0, .25);
+}
+
+.designation-type
+{
+	padding-left: .5rem;
+	color: rgba(0, 0, 0, .5);
+	font-style: italic;
+}
+
+article.onerror
+{
+	display: none;
 }

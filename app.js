@@ -25,11 +25,13 @@ ajax.onload = () => {
 			if (resp.signature.version == "1.1") {
 				Render(JSON.parse(ajax.response));
 			} else {
-				console.log("API version mismatch.");
+				ErrorScreen(412);
 			}
 		} else {
-			console.log("Object not found.");
+			ErrorScreen(404);
 		}
+	} else {
+		ErrorScreen(400);
 	}
 };
 

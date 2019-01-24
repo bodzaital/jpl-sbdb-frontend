@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>Document</title>
+	<title>SBDB: Search...</title>
 	<link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -17,26 +17,27 @@
 		<div class="search-field">
 			<input type="text" id="search" placeholder="Enter searchstring">
 		</div>
-		<div class="details">
-			<span id="object-orbit"></span><span id="object-primary-designation"></span>
+		<div class="details" id="object-orbit">
 		</div>
 		<span id="object-orbit"></span>
 	</header>
 
-	<div class="flex-row">
-		<div class="flex-col">
-			Alternate designations:
-			<span id="object-des-alt-count"></span>
-			<span id="object-des-alt-showmore">
-				<a href="#" id="object-showall-des-alt" class="link-button">Show all</a>
-			</span>
-			<ul id="object-des-alt" class="hide-a-lot"></ul>
+	<article>
+		<div class="flex-row">
+			<div class="flex-col">
+				<span id="object-des-alt-showmore">
+					<a href="#" id="object-showall-des-alt" class="link-button">Show all</a>
+				</span>
+				Known designations:&nbsp;<span id="object-des-alt-count"></span>
+				<ul id="object-des-alt" class="hide-a-lot"></ul>
+			</div>
+			<div class="flex-col">
+				Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad magni repellat fuga, ut maxime blanditiis quia sapiente asperiores odio beatae nemo aspernatur ullam esse soluta labore tenetur debitis dicta voluptates.
+			</div>
+			<div class="flex-col">Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam officiis magni possimus consequatur nobis, eligendi suscipit ut, itaque quae eum recusandae! Minima autem laborum deserunt quos, maxime ab voluptatum molestiae.</div>
 		</div>
-		<div class="flex-col">
-			Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad magni repellat fuga, ut maxime blanditiis quia sapiente asperiores odio beatae nemo aspernatur ullam esse soluta labore tenetur debitis dicta voluptates.
-		</div>
-		<div class="flex-col">Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam officiis magni possimus consequatur nobis, eligendi suscipit ut, itaque quae eum recusandae! Minima autem laborum deserunt quos, maxime ab voluptatum molestiae.</div>
-	</div>
+	</article>
+
 	
 	<script src="func.js"></script>
 	<script src="app.js"></script>
