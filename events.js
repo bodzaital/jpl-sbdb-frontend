@@ -10,3 +10,33 @@ x("#object-designation").addEventListener("click", e => {
 	document.execCommand("copy");
 	copyable.style.display = "none";
 });
+
+x("#object-showall-des-alt").addEventListener("click", e => {
+	e.preventDefault();
+	let items = xs("[class^=hidable-li]");
+	
+	if (showstates.alt_des) {
+		items.forEach(el => {
+			el.classList = "hidable-li hidden-li";
+		});
+
+		e.target.classList = "link-button";
+		e.target.innerText = "Show all";
+		showstates.alt_des = false;
+	} else {
+		items.forEach(el => {
+			el.classList = "hidable-li";
+		});
+
+		e.target.classList = "link-button isopen";
+		e.target.innerText = "Show less";
+		showstates.alt_des = true;
+	}
+});
+
+x("#search").addEventListener("keydown", e => {
+	if (e.key === "Enter") {
+		let search_sstr = x("#search").value;
+		window.location.href = `${url.pathname}?sstr=${search_sstr}`
+	}
+});

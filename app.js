@@ -1,7 +1,12 @@
 let url = new URL(window.location.href);
 let sstr = url.searchParams.get("sstr");
 
+if (sstr === null) {
+	sstr = 1;
+}
+
 let options = {
+	"orbit-defs": false,
 	"alt-des": true,
 	"alt-spk": true,
 	"phys-par": true
@@ -27,3 +32,7 @@ ajax.onload = () => {
 		}
 	}
 };
+
+let showstates = {
+	alt_des: false
+}

@@ -1,15 +1,16 @@
 @import url('https://fonts.googleapis.com/css?family=Lato&subset=latin-ext');
 
-*
+/* *
 {
 	outline: 1px solid red;
-}
+} */
 
 body
 {
 	margin: 0 auto;
 	font-family: 'Lato', sans-serif;
 	max-width: 960px;
+	padding: 0 1rem;
 }
 
 /* For the invisible input so copy to clipboard works. */
@@ -22,6 +23,7 @@ header
 {
 	text-align: center;
 	position: relative;
+	margin-bottom: 1rem;
 }
 
 .name-container
@@ -47,6 +49,23 @@ h1#object-name
 	left: .5rem;
 	cursor: pointer;
 	color: rgb(128, 128, 128);
+}
+
+.search-field
+{
+	position: absolute;
+	top: .5rem;
+	right: .5rem;
+}
+
+.search-field input
+{
+	text-align: right;
+	border: none;
+	border-bottom: 1px solid gray;
+	border-right: 1px solid gray;
+	outline: none;
+	padding: .125rem .25rem;
 }
 
 /* Hide on mobile so it won't overlap with the title-container. */
@@ -78,4 +97,85 @@ h1#object-name
 [data-tooltip]:hover::before
 {
 	display: inline-block;
+}
+
+.flex-row
+{
+	display: flex;
+	flex-direction: column;
+	align-items: stretch;
+}
+
+.flex-col
+{
+	flex-grow: 1;
+}
+
+@media (min-width: 720px)
+{
+	.flex-col:not(:last-child)
+	{
+		padding-right: 1rem;
+	}
+}
+
+
+@media (min-width: 720px)
+{
+	.flex-row
+	{
+		flex-direction: row;
+	}
+
+	.flex-col
+	{
+		width: 100%;
+	}
+}
+
+#object-des-alt
+{
+	margin: 0;
+	padding: .25rem 0 0 0;
+}
+
+.hidden-li
+{
+	display: none;
+}
+
+#object-des-alt li
+{
+	list-style-type: none;
+}
+
+#object-des-alt li:before
+{
+	content: '–';
+	padding: 0 .5rem 0 .25rem;
+}
+
+#object-des-alt-showmore
+{
+	float: right;
+}
+
+#object-des-alt-showmore.hide
+{
+	display: none;
+}
+
+a.link-button
+{
+	text-decoration: none;
+	color: black;
+	border: 1px solid black;
+	cursor: default;
+	padding: .125rem .5rem;
+}
+
+a.link-button:hover,
+a.link-button.isopen
+{
+	box-shadow: 0 0 .25rem rgba(0, 0, 0, .25);
 }
