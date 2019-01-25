@@ -1,3 +1,5 @@
+x("article").classList = "onerror";
+
 let url = new URL(window.location.href);
 let sstr = url.searchParams.get("sstr");
 

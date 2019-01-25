@@ -1,4 +1,4 @@
-x("#object-designation").addEventListener("click", e => {
+x("#designation").addEventListener("click", e => {
 	let copyable = x("#copyable-object-designation");
 	copyable.value = url;
 	
@@ -36,7 +36,8 @@ x("#object-showall-des-alt").addEventListener("click", e => {
 
 x("#search").addEventListener("keydown", e => {
 	if (e.key === "Enter") {
-		let search_sstr = x("#search").value;
-		window.location.href = `${url.pathname}?sstr=${search_sstr}`
+		let sstr = x("#search").value;
+		let targetURI = `//${location.host}${location.pathname}?sstr=${sstr}`
+		window.location = targetURI;
 	}
 });

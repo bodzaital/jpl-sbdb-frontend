@@ -8,18 +8,18 @@
 	<link rel="stylesheet" href="styles.css">
 </head>
 <body>
+	<!-- Hack for the click to copy. -->
+	<input type="text" id="copyable-object-designation" style="display:none">
+	
 	<header>
-		<abbr title="Click to copy link to this object."><div id="object-designation"></div></abbr>
-		<input type="text" class="norender" id="copyable-object-designation">
-		<div class="name-container">
-			<h1 id="object-name">· · · ⌛ · · ·</h1>
+		<div class="name-bar">
+			<abbr title="Click to copy link to object."><div id="designation"></div></abbr>
+			<h1 class="name">· · · ⌛ · · ·</h1>
+			<input type="text" id="search" placeholder="Enter search string">
 		</div>
-		<div class="search-field">
-			<input type="text" id="search" placeholder="Enter searchstring">
+		<div class="details">
+			<span id="object-orbit"></span>
 		</div>
-		<div class="details" id="object-orbit">
-		</div>
-		<span id="object-orbit"></span>
 	</header>
 
 	<article>

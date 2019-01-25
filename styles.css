@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Lato&subset=latin-ext');
 
+/* For testing. */
 /* *
 {
 	outline: 1px solid red;
@@ -7,8 +8,8 @@
 
 body
 {
-	margin: 0 auto;
 	font-family: 'Lato', sans-serif;
+	margin: 1rem auto 0;
 	max-width: 960px;
 	padding: 0 1rem;
 }
@@ -23,30 +24,24 @@ header
 {
 	text-align: center;
 	position: relative;
-	margin: 1rem 0;
+	margin-bottom: 1rem;
 }
 
-.name-container
+h1.name
 {
 	margin: 0 0 1rem;
 }
 
-h1#object-name
-{
-	margin: 0;
-	display: inline-block;
-}
-
 .details
 {
+	border-bottom: 1px solid gray;
+	border-top: 1px solid gray;
+	display: inline-block;
 	padding: .5rem 0;
 	width: 75%;
-	border-top: 1px solid gray;
-	border-bottom: 1px solid gray;
-	display: inline-block;
 }
 
-#object-designation
+#designation
 {
 	position: absolute;
 	top: .5rem;
@@ -55,47 +50,42 @@ h1#object-name
 	color: rgb(128, 128, 128);
 }
 
-.search-field
+input#search
 {
-	position: absolute;
-	top: .5rem;
-	right: .5rem;
-}
-
-.search-field input
-{
-	text-align: right;
 	border: none;
 	border-bottom: 1px solid gray;
 	border-right: 1px solid gray;
+	
 	outline: none;
 	padding: .125rem .25rem;
+	position: absolute;
+	right: .5rem;
+	top: .5rem;
+
+	text-align: right;
 	font-style: italic;
 }
 
 @media (max-width: 720px)
 {
-	.search-field
+	#designation
 	{
+		margin-bottom: 1rem;
 		position: relative;
 		top: unset;
-		right: unset;
-		margin-bottom: 1rem;
+		left: unset;
 	}
 
-	.search-field input
+	input#search
 	{
 		border-right: none;
+		
+		position: relative;
+		margin-bottom: 1rem;
+		top: unset;
+		right: unset;
+		
 		text-align: center;
-	}
-}
-
-/* Hide on mobile so it won't overlap with the title-container. */
-@media (max-width: 576px)
-{
-	#object-designation
-	{
-		display: none;
 	}
 }
 

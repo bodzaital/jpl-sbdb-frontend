@@ -1,19 +1,20 @@
 function Render(e)
 {
+	x("article").classList = "";
 	console.log(e);
 
 	if (e.object.shortname === undefined) {
-		x("#object-name").innerText = e.object.fullname;
-		x("#object-name").dataset.tooltip = "Object doesn't have a longer name";
+		x(".name").innerText = e.object.fullname;
+		x(".name").dataset.tooltip = "Object doesn't have a longer name";
 		document.title = `SBDB: ${e.object.fullname}`;
 	} else {
-		x("#object-name").innerText = e.object.shortname;
-		x("#object-name").dataset.tooltip = e.object.fullname;
+		x(".name").innerText = e.object.shortname;
+		x(".name").dataset.tooltip = e.object.fullname;
 		document.title = `SBDB: ${e.object.shortname}`;
 	}
 
 	x("#object-orbit").innerText = `${e.object.orbit_class.name} (${e.object.orbit_class.code})`;
-	x("#object-designation").innerText = "#" + e.object.des;
+	x("#designation").innerText = "#" + e.object.des;
 
 	let designationItem = {};
 
