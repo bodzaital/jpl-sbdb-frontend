@@ -18,7 +18,12 @@ let api = "https://ssd-api.jpl.nasa.gov/sbdb.api?sstr=" + sstr + JsonToParams(op
 
 let ajax = new XMLHttpRequest();
 ajax.open("GET", api, true);
+
 ajax.send();
+
+ajax.onerror = () => {
+	ErrorScreen(403);
+}
 
 ajax.onload = () => {
 	if (ajax.readyState === ajax.DONE && ajax.status === 200) {
