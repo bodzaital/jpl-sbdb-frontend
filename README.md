@@ -1,20 +1,15 @@
-# JPL Small body database frontend
+# JPL Small Body Database (SBDB) frontend
 
-Enter a search string ?sstr= to read that object's details. They handle the searching thankfully, so for example, the following all point to the same object:
+It has a search field where you can enter a search string to bring up that object's details. The database handles searching thankfully, so for example the following all point to the same object: 23238, Ocasio-Cortez, 23238 Ocasio-Cortez, 2000 WU111, 1992 UB9, 2023238.
 
-- 23238
-- Ocasio-Cortez
-- 23238 Ocasio-Cortez
-- 2000 WU111
-- 1992 UB9
-- 2023238
+Clicking the designation in the top left corner copies the url to the clipboard.
 
-Clicking the designation in the top left corner copies it to the clipboard.
+The default page is the object with the #1 designation (1 Ceres).
 
 ## TODO
 
-- A search box.
-- A nicer style.
-- More information.
-- Handle no GET parameters.
-- Handle when the api returns bad request/not found/200 but "specified object was not found."
+Display more information
+
+## System outages
+
+The database api goes down periodically. The app displays a "forbidden" message if that happens.
