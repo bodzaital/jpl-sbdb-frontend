@@ -1,3 +1,5 @@
+let renderDone = new Event("renderDone");
+
 function Render(e)
 {
 	x("article").classList = "";
@@ -21,8 +23,8 @@ function Render(e)
 	if (e.object.des_alt.length > 0) {
 		if (e.object.des_alt.length < 4) {
 			x("#object-des-alt-showmore").classList = "hide";
-		} else {
 		}
+
 		x("#object-des-alt-count").innerText = e.object.des_alt.length;	
 
 		for (let i = 0; i < e.object.des_alt.length; i++) {
@@ -59,6 +61,13 @@ function Render(e)
 			x("#object-des-alt").appendChild(designationItem.item);
 		}
 	}
-}
+	
+	for (let i = 0; i < e.orbit.elements.length; i++) {
+		let f = e.orbit.elements[i];
+		for (let i = 0; i < 2; i++) {
+			x(".orbit-table").appendChild(OrbitalElementNodeBuilder(f)[i]);	
+		}
+	}
 
-// li > span + span
+	document.dispatchEvent(renderDone);
+}

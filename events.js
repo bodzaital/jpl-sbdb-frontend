@@ -41,3 +41,13 @@ x("#search").addEventListener("keydown", e => {
 		window.location = targetURI;
 	}
 });
+
+// I was more amazed that this works than I should have been.
+document.addEventListener("renderDone", e => {
+	console.log("Render is done, adding event listeners to dynamic nodes.");
+	xs("tr").forEach(element => {
+		element.addEventListener("click", e => {
+			console.log("bang!");
+		});
+	});
+})

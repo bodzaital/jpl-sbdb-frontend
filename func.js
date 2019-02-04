@@ -34,3 +34,29 @@ function ErrorScreen(c) {
 		x("#object-orbit").innerText = "An error happened." + ` (${c})`;
 	}
 }
+
+// Creates a single line of orbital elements.
+function OrbitalElementNodeBuilder(OrbitalElement) {
+	let row = document.createElement("tr");
+	let sym = document.createElement("td");
+	sym.innerText = OrbitalElement.label;
+
+	let val = document.createElement("td");
+	val.innerText = `${OrbitalElement.value}`;
+
+	if (OrbitalElement.units !== null) {
+		val.innerText += ` ${OrbitalElement.units}`;
+	}
+
+	row.appendChild(sym);
+	row.appendChild(val);
+
+	let rowDescription = document.createElement("tr");
+	let description = document.createElement("td");
+	description.setAttribute("colspan", "2");
+	description.innerText = OrbitalElement.title;
+
+	rowDescription.appendChild(description);
+
+	return [row, rowDescription];
+}
