@@ -45,9 +45,10 @@ x("#search").addEventListener("keydown", e => {
 // I was more amazed that this works than I should have been.
 document.addEventListener("renderDone", e => {
 	console.log("Render is done, adding event listeners to dynamic nodes.");
-	xs("tr").forEach(element => {
+	xs("tr:not([class])").forEach(element => {
 		element.addEventListener("click", e => {
-			console.log("bang!");
+			// e.target.parentNode.nextSibling.classList = "";
+			ToggleClass(e.target.parentNode.nextSibling, "hidden-row");
 		});
 	});
 })

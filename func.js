@@ -36,10 +36,15 @@ function ErrorScreen(c) {
 }
 
 // Creates a single line of orbital elements.
-function OrbitalElementNodeBuilder(OrbitalElement) {
+function ElementNodeBuilder(element, OrbitalElement) {
 	let row = document.createElement("tr");
 	let sym = document.createElement("td");
-	sym.innerText = OrbitalElement.label;
+	
+	if (element === "orbital") {
+		sym.innerText = OrbitalElement.label;
+	} else if (element === "phys") {
+		sym.innerText = OrbitalElement.name;
+	}
 
 	let val = document.createElement("td");
 	val.innerText = `${OrbitalElement.value}`;
@@ -52,11 +57,27 @@ function OrbitalElementNodeBuilder(OrbitalElement) {
 	row.appendChild(val);
 
 	let rowDescription = document.createElement("tr");
+	rowDescription.classList = "hidden-row";
 	let description = document.createElement("td");
 	description.setAttribute("colspan", "2");
-	description.innerText = OrbitalElement.title;
+
+	if (element === "orbital") {
+		description.innerText = OrbitalElement.title;
+	} else if (element === "phys") {
+		description.innerText = OrbitalElement.desc;
+	}
+
+	description.classList = "description";
 
 	rowDescription.appendChild(description);
 
 	return [row, rowDescription];
+}
+
+function ToggleClass(element, on) {
+	if (element.classList == on) {
+		element.classList = "";
+	} else {
+		element.classList = on;
+	}
 }

@@ -11,7 +11,7 @@
 	<!-- Hack for the click to copy. -->
 	<input type="text" id="copyable-object-designation" style="display:none">
 	
-	<header>
+	<header class="global">
 		<div class="name-bar">
 			<abbr title="Click to copy link to object."><div id="designation"></div></abbr>
 			<h1 class="name">· · · ⌛ · · ·</h1>
@@ -25,19 +25,31 @@
 	<article>
 		<div class="flex-row">
 			<div class="flex-col">
+				<header class="section">
 				<span id="object-des-alt-showmore">
 					<a href="#" id="object-showall-des-alt" class="link-button">Show all</a>
-				</span>
-				Known designations:&nbsp;<span id="object-des-alt-count"></span>
+				</span>Known designations:&nbsp;<span id="object-des-alt-count"></span>
+				</header>
 				<ul id="object-des-alt" class="hide-a-lot"></ul>
 			</div>
 			<div class="flex-col">
-				<table class="orbit-table"></table>
+				<header class="section">Orbital characteristics:</header>
+				<table class="char-table" id="orbital"></table>
 			</div>
-			<div class="flex-col">Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam officiis magni possimus consequatur nobis, eligendi suscipit ut, itaque quae eum recusandae! Minima autem laborum deserunt quos, maxime ab voluptatum molestiae.</div>
+			<div class="flex-col">
+				<header class="section">Physical characteristics:</header>
+				<table class="char-table" id="phys"></table>
+			</div>
 		</div>
 	</article>
 
+	<footer>
+		<div class="flex-row">
+			<div class="flex-col left">Written by Zsolt Boda</div>
+			<div class="flex-col mid"><a href="https://github.com/bodzaital/jpl-sbdb-frontend">GitHub repo</a>.</div>
+			<div class="flex-col right" id="source"></div>
+		</div>
+	</footer>
 	
 	<script src="func.js"></script>
 	<script src="app.js"></script>
