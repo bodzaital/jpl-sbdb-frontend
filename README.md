@@ -1,14 +1,27 @@
 # JPL Small Body Database (SBDB) frontend
 
-It has a search field where you can enter a search string to bring up that object's details. The database handles searching thankfully, so for example the following all point to the same object: 23238, Ocasio-Cortez, 23238 Ocasio-Cortez, 2000 WU111, 1992 UB9, 2023238.
+Live version: http://bodzaital.hu/jpl-sbdb/
+
+Displays data from the [NASA JPL Small-body database API](https://ssd-api.jpl.nasa.gov/doc/sbdb.html) in a nicer form.
+
+## How it works
+
+Sends the `sstr` GET parameter to the API as the search string.
+
+If the `sstr` GET parameter is missing, `1 Ceres` is displayed. If it exists but it doesn't have a value, it returns an error.
+
+The database handles searching thankfully, so for example the following all point to the same object: 23238, Ocasio-Cortez, 23238 Ocasio-Cortez, 2000 WU111, 1992 UB9, 2023238.
 
 Clicking the designation in the top left corner copies the url to the clipboard.
 
-The default page is the object with the #1 designation (1 Ceres).
+## To-do
 
-## TODO
+Legend: 🏃 ongoing, ⌛ in-progress, (empty) not-started
 
-Display more information
+- ‍‍‍‍‍🏃 Display more information
+- ⌛ Animate transitions
+- Handle mutliple search results
+- Handle invalid `sstr` parameter
 
 ## System outages
 
