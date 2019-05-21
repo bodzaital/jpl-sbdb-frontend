@@ -1,6 +1,6 @@
 # JPL Small Body Database (SBDB) frontend
 
-Live version: http://bodzaital.hu/jpl-sbdb/
+Live version: http://webns.zsoltboda.hu/jpl-sbdb/
 
 Displays data from the [NASA JPL Small-body database API](https://ssd-api.jpl.nasa.gov/doc/sbdb.html) in a nicer form.
 
